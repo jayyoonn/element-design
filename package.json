@@ -1,0 +1,15 @@
+{
+  "name": "element-design",
+  "version": "0.0.1",
+  "private": true,
+  "description": "element-design 组件库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "element-design"
+  ],
+  "author": "jayyoonn",
+  "license": "ISC"
+}
