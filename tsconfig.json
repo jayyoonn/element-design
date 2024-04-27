@@ -1,3 +1,10 @@
 {
-  "extends": "@tsconfig/recommend/tsconfig.json"
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"lib": ["es2015", "dom"],
+		"noImplicitAny": false,
+		"declaration": false
+	},
+	"include": ["**/*"]
 }
