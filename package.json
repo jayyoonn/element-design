@@ -3,13 +3,56 @@
   "version": "0.0.1",
   "private": true,
   "description": "element-design 组件库",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git-cz",
+    "format": "biome format --write ./",
+    "postinstall": "husky install"
   },
-  "keywords": [
-    "element-design"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  },
+   "lint-staged": {
+    "**.{js|ts|cjs|mjs|d.cts|d.mts|jsx|tsx|json|jsonc}": [
+      "biome check --files-ignore-unknown=true", 
+      "biome check --apply --no-errors-on-unmatched", 
+      "biome check --apply --organize-imports-enabled=false --no-errors-on-unmatched", 
+      "biome check --apply-unsafe --no-errors-on-unmatched",
+      "biome format --write --no-errors-on-unmatched", 
+      "biome lint --apply --no-errors-on-unmatched"
+    ],
+    "*": [
+      "biome check --no-errors-on-unmatched --files-ignore-unknown=true"
+    ]
+  },
+  "author": "jayyoonn <18819444437163.com>",
+  "homepage": "https://github.com/jayyoonn/element-design",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jayyoonn/element-design"
+  },
+  "bugs": {
+    "url": "https://github.com/jayyoonn/element-design/issues"
+  },
+  "files": [
+    "dist",
+    "README.md"
   ],
-  "author": "jayyoonn",
-  "license": "ISC"
+  "keywords": [
+    "element-design",
+    "typescript",
+    "vue3"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "1.7.1",
+    "@changesets/cli": "^2.27.1",
+    "cz-git": "^1.9.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2"
+  }
 }
